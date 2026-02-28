@@ -1033,7 +1033,7 @@ def parse_dpg(dpg, hname):
             else:
                 vlantype_name = vlantype.text
             vintfmbr = vintf.find(str(QName(ns, "AttachTo"))).text
-            vmbr_list = vintfmbr.split(';')
+            vmbr_list = vintfmbr.split(';') if vintfmbr else []
             if vlantype_name != "Tagged":
                 for member in vmbr_list:
                     untagged_vlan_mbr[member].add(vlanid)
@@ -1046,7 +1046,7 @@ def parse_dpg(dpg, hname):
                 vlantype_name = ""
             else:
                 vlantype_name = vlantype.text
-            vmbr_list = vintfmbr.split(';')
+            vmbr_list = vintfmbr.split(';') if vintfmbr else []
             for i, member in enumerate(vmbr_list):
                 vmbr_list[i] = port_alias_map.get(member, member)
                 sonic_vlan_member_name = "Vlan%s" % (vlanid)
