@@ -13,6 +13,7 @@ endif
 
 SONIC_CONFIG_ENGINE_PY3 = sonic_config_engine-1.0-py3-none-any.whl
 $(SONIC_CONFIG_ENGINE_PY3)_SRC_PATH = $(SRC_PATH)/sonic-config-engine
+$(SONIC_CONFIG_ENGINE_PY3)_TEST = n
 $(SONIC_CONFIG_ENGINE_PY3)_DEPENDS += $(SONIC_PY_COMMON_PY3) \
                                       $(SONIC_YANG_MGMT_PY3) \
                                       $(SONIC_YANG_MODELS_PY3)
